@@ -11,21 +11,28 @@
 web: gunicorn pastaprincipaldaaplicacao.wsgi --log-file -
 ```
 
-4- Configurar o ALLOWED_HOSTS (localhost e URL de publicação)
+4- Configurar o ALLOWED_HOSTS no settings.py:
 
-5- Configurar o STATIC_ROOT:
+```
+ALLOWED_HOSTS = ['localhost', 'meuappnaheroku.herokuapp.com']
+```
+
+5- Adicionar a configuração de STATIC_ROOT no settings.py, após a variável STATIC_URL:
 
 ```
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 ```
 
-6- Adicionar a configuração do Heroku no settings.py
+6- Adicionar a configuração do django-heroku no settings.py.
 
+No ínicio do arquivo:
 ```
 import django_heroku
+```
 
-...
-
+No fim do arquivo:
+```
 django_heroku.settings(locals())
 ```
 
