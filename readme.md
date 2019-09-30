@@ -47,5 +47,21 @@ django_heroku.settings(locals())
 4- Clicar no botão deploy
 
 
+## Aplicando migrations
+
+1- No painel da Heroku, clicar no botão `More` (canto superior direito)
+
+2- Clicar em `Run Console`
+
+3- Digitar `bash` na janela que apareceu, depois clique em `Run`
+
+4- Será exibido um terminal de acesso a máquina. Execute as migrations com:
+
+```
+python3 manage.py migrate
+```
+
+** É necessário executar esse comando manualmente toda vez que houverem novas migrations
+
 ## Tutorial de exemplo
 https://devcenter.heroku.com/articles/getting-started-with-python?singlepage=true
